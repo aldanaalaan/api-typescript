@@ -3,9 +3,9 @@ import express from "express";
 import dairyRouter from "./routes/diaries";
 
 const app = express();
-app.use(express.json()); //* Middleware para obtener request
+app.use(express.json()); //* Middleware para obtener req.body en Post
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.get("/ping", (_req, res) => {
     console.log("someone ping here!");
@@ -16,5 +16,4 @@ app.use("/api/diaries", dairyRouter);
 
 app.listen(PORT, () => {
     console.log(`Server listening on port ${PORT}`);
-    console.log(`Local: http://localhost:${PORT}`);
 });
