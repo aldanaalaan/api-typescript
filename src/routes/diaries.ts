@@ -1,6 +1,7 @@
 // # Importaiones
 import express from "express";
 import * as dairyServices from "../services/dairyServices";
+import toNewDairyEntry from "../utils";
 const router = express.Router();
 
 router.get("/", (_req, res) => {
